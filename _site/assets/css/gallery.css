@@ -1,56 +1,44 @@
 .gallery {
-  position: relative;
-}
-.gallery .gallery-slide {
-  display: none;
-}
-.gallery .gallery-slide.active {
-  display: block;
-}
-.gallery .slide-arrow {
-  position: absolute;
-  height: 15%;
-  width: 15%;
-  bottom: 45%;
-  padding: 16px;
-  max-height: 100px;
-  max-width: 100px;
-  min-height: 50px;
-  min-width: 50px;
-  backdrop-filter: brightness(20%);
-  -webkit-backdrop-filter: brightness(20%);
-  cursor: pointer;
-}
-.gallery .slide-arrow:hover {
-  backdrop-filter: brightness(50%);
-  -webkit-backdrop-filter: brightness(50%);
-}
-.gallery .slide-arrow.left {
-  left: 0;
-}
-.gallery .slide-arrow.right {
-  right: 0;
-}
-.gallery .dot-box {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-.gallery .dot-box .slide-dot {
-  margin: 0 auto;
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: white;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.4s ease;
-  border: 1px solid black;
-}
-.gallery .dot-box .slide-dot.active {
-  background-color: black;
-}
-
-/*# sourceMappingURL=gallery.css.map */
+  position: relative; }
+  .gallery .gallery-slide {
+    display: none; }
+    .gallery .gallery-slide.active {
+      display: block; }
+  .gallery .slide-arrow {
+    position: absolute;
+    height: 15%;
+    width: 15%;
+    bottom: 45%;
+    padding: 16px;
+    max-height: 100px;
+    max-width: 100px;
+    min-height: 50px;
+    min-width: 50px;
+    backdrop-filter: brightness(20%);
+    -webkit-backdrop-filter: brightness(20%);
+    cursor: pointer; }
+    .gallery .slide-arrow:hover {
+      backdrop-filter: brightness(50%);
+      -webkit-backdrop-filter: brightness(50%); }
+    .gallery .slide-arrow.left {
+      left: 0; }
+    .gallery .slide-arrow.right {
+      right: 0; }
+  .gallery .dot-box {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center; }
+    .gallery .dot-box .slide-dot {
+      margin: 0 auto;
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: white;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.4s ease;
+      border: 1px solid black; }
+      .gallery .dot-box .slide-dot.active {
+        background-color: black; }

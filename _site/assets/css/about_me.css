@@ -2,11 +2,7 @@
   float: right;
   max-width: 35%;
   min-width: min(350px, 100%);
-  padding: 15px;
-}
+  padding: 15px; }
 
 #about-me-text {
-  font-size: 1.75em;
-}
-
-/*# sourceMappingURL=about_me.css.map */
+  font-size: 1.75em; }
