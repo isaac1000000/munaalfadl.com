@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["about_me.scss"],"names":[],"mappings":"AAAA;EACC;EACA;EACA;EACA;;;AAED;EACC","sourcesContent":["#about-me-img {\n\tfloat: right;\n\tmax-width: 35%;\n\tmin-width: min(350px, 100%);\n\tpadding: 15px;\n}\n#about-me-text {\n\tfont-size: 1.75em;\n}"],"file":"about_me.css"}
