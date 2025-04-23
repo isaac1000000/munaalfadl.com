@@ -1,0 +1,19 @@
+url: ""
+baseurl: "/"
+title: "muna al fadl"
+collections:
+  works:
+    output: true
+    permalink: /works/:title
+  curations:
+    output: true
+    permalink: /curation/:title
+navigation:
+  - text: "about me"
+    url: "/about-me"
+  - text: "works"
+    url: "/works"
+  - text: "curation"
+    url: "/curation"
+  - text: "contact"
+    url: "/contact"

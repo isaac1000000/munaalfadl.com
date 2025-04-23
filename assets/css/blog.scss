@@ -1,0 +1,56 @@
+---
+---
+#posts-box {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	column-gap: 30px;
+	row-gap: 100px;
+
+	.post-box {
+		position: relative;
+		flex: 1 1 calc(32% - 10px);
+		max-width: calc(32% - 10px);
+		min-width: 300px;
+
+		a, a:visited {
+			text-decoration: none;
+			color: inherit;
+			display: block;
+			height: 100%;
+			width: 100%;
+
+			&:hover {
+				.post-title {
+					text-decoration: underline;
+				}
+				.read-more {
+					text-decoration: underline;
+				}
+			}
+
+			.post-img {
+				width: 100%;
+				max-height: 200px;
+				object-fit: cover;
+			}	
+
+			.post-title {
+				width: 100%;
+				display: block;
+				text-align: center;
+				font-size: 1.5em;
+
+				.post-date {
+					font-size: .75em;
+				}
+			}
+
+			p {
+				display: block;
+			}
+		}
+	}
+}

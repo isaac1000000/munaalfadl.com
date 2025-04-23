@@ -1,0 +1,5 @@
+<nav>  
+	{% for link in site.navigation %}
+       <a href="{{link.url}}" {% if page.active == link.url or layout.active == link.url %}class="current"{% endif %}>{{link.text}}</a>
+    {% endfor %}
+</nav>

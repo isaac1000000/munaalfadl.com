@@ -1,0 +1,65 @@
+---
+---
+.gallery {
+	position: relative;
+
+	.gallery-slide {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	.slide-arrow {
+		position: absolute;
+		height: 15%;
+		width: 15%;
+		bottom: 45%;
+		padding: 16px;
+		max-height: 100px;
+		max-width: 100px;
+		min-height: 50px;
+		min-width: 50px;
+		backdrop-filter: brightness(20%);
+		-webkit-backdrop-filter: brightness(20%);
+		cursor: pointer;
+
+		&:hover {
+			backdrop-filter: brightness(50%);
+			-webkit-backdrop-filter: brightness(50%);
+		}
+
+		&.left {
+			left: 0;
+		}
+
+		&.right {
+			right: 0;
+		}
+	}
+
+	.dot-box {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+
+		.slide-dot {
+			margin: 0 auto;
+			cursor: pointer;
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: white;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.4s ease;
+			border: 1px solid black;
+
+			&.active {
+				background-color: black;
+			}
+		}
+	}
+}

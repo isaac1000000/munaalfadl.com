@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["contact.scss"],"names":[],"mappings":"AAAA;EACC;;AAEA;EACC","sourcesContent":["p {\n\tfont-size: 1.5em;\n\n\ta:hover {\n\t\tcolor: gray;\n\t}\n}"],"file":"contact.css"}

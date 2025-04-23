@@ -1,0 +1,330 @@
+---
+---
+
+$bg-color: white;
+$header-height: 80px;
+$footer-height: 50px;
+
+$menu-open-time: .5s;
+$button-hover-color: #808080;
+$sidebar-width: 300px;
+
+@mixin for-desktop-display {
+	@media screen and (min-width:768px) { @content; }
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-family: "SourceSans";
+}
+
+body {
+	background-color: $bg-color;
+	min-height: calc(100vh - $header-height);
+	height: 100%;
+	position: relative;
+	right: 0;
+	transition: right $menu-open-time;
+
+	&.open {
+		right: $sidebar-width;
+		@include for-desktop-display { right: 0 }
+	}
+}
+
+h1, h2, h3 {
+	font-family: "PlayfairDisplay";
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: inherit;
+}
+
+#content-wrapper {
+	min-height: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: 1fr auto; /* position: fixed header so only 2 rows necessary */
+}
+
+header {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	height: $header-height;
+	background-color: $bg-color;
+	font-size: 1.25rem;
+	width: 100%;
+	font-family: "PlayfairDisplay";
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		align-items: center;
+		height: 100%;
+		padding: 0 10px;
+
+		.home-link {
+			white-space: nowrap;
+			margin-left: 20px;
+
+			.signature {
+				height: $header-height;
+			}
+		}
+	}
+
+	#mobile-header {
+		display: flex;
+		@include for-desktop-display { display: none; };
+
+		#mobile-menu-button {
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		  row-gap: 6px;
+		  background-color: transparent;
+		  border: none;
+
+		  .mobile-menu-button-line,
+		  &::before,
+		  &::after {
+			  content: "";
+			  width: 33px;
+			  height: 3px;
+			  background-color: #333333;
+		  	}
+		}
+
+		#mobile-nav-box {
+			position: fixed;
+			right: - $sidebar-width;
+			top: 0;
+			height: 100%;
+			width: $sidebar-width;
+			padding: 35px;
+			background-color: $bg-color;
+			border-left: 1px solid black;
+			transition: right $menu-open-time;
+			color: black;
+
+			&.open {
+				right: 0;
+			}
+
+			#mobile-menu-close-button {
+				float: right;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				row-gap: 6px;
+				background-color: $bg-color;
+				border: none;
+
+				.mobile-menu-close-button-line,
+		  		&::before,
+		  		&::after {
+			  		content: "";
+			  		width: 33px;
+			  		height: 3px;
+			  		background-color: #333333;
+		  		}
+
+		  		.mobile-menu-close-button-line:hover,
+		  		&:hover::before,
+		  		&:hover::after {
+		  			background-color: $button-hover-color;
+		  		}
+
+				.mobile-menu-close-button-line {
+		  			opacity: 0;
+		  		}
+
+		  		&::before {
+		  			transform: translateY(9px) rotate(45deg);
+		  		}
+
+
+		  		&::after {
+		  			transform: translateY(-9px) rotate(-45deg);
+		  		}
+			}
+
+			#mobile-nav-links {
+				height: 100%;
+			}
+
+			nav {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				text-align: right;
+				line-height: 1.5em;
+				height: 50%;
+				width: 100%;
+				font-size: 1.5em;
+				text-decoration: none;
+
+				.current {
+					text-decoration: underline;
+				}
+
+				a:hover {
+					color: gray;
+				}
+			}
+		}
+	}
+
+	#desktop-header {
+		display: none;
+		@include for-desktop-display { display: flex; }
+		nav {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+			width: 70%;
+
+			a {
+				display: block;
+				position: relative;
+				height: 50%;
+				padding: 20px 0;
+				width: calc(100% * (1 / {{ site.navigation.size }}));
+				text-align: center;
+
+				&::before {
+					content: '';
+				    display: block;
+				    position: absolute;
+				    bottom: 0;
+				    width: 0%;
+				    left: 50%;
+				    border-bottom: 2px solid gray;
+				    transition: width .5s, left .5s;
+				}
+
+				&:hover::before {
+				    content: '';
+				    display: block;
+				    position: absolute;
+				    bottom: 0;
+				    width: 80%;
+				    left: 10%;
+				    border-bottom: 2px solid gray;
+				}
+
+				&.current::before {
+				    content: '';
+				    display: block;
+				    position: absolute;
+				    bottom: 0;
+				    width: 80%;
+				    left: 10%;
+				    border-bottom: 2px solid black;
+				}
+			}
+		}
+	}
+
+	a, a:visited {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	#site-title {
+		display: block;
+		margin: 0;
+		margin-left: 10px;
+		white-space: nowrap;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+main {
+	margin-top: $header-height;
+	padding: min(10vh, 80px) min(10vw, 80px);
+	height: calc(100% - $header-height);
+}
+
+footer {
+	height: $footer-height;
+	position: static;
+	width: 100%;
+	color: gray;
+	margin: 0;
+	display: block;
+
+	#copyrights {
+		font-size: .75em;
+		float: right;
+		text-align: right;
+		padding-right: 50px;
+	}
+}
+
+.focus-cover {
+	position: fixed;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity $menu-open-time ease-out;
+	backdrop-filter: brightness(50%);
+	-webkit-backdrop-filter: brightness(50%);
+
+	&.open {
+		pointer-events: auto;
+		opacity: 1;
+	}
+}
+
+
+button {
+	cursor: pointer;
+}
+
+.expandable {
+	cursor: pointer;
+}
+
+
+
+
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/assets/fonts/playfairdisplay/playfairdisplayvariablefontwghtwebfont.woff2') format('woff2'),
+         url('/assets/fonts/playfairdisplay/playfairdisplayvariablefontwghtwebfont.woff') format('woff');
+    font-weight: 0;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSans';
+    src: url('/assets/fonts/sourcesans/sourcesans3variablefontwghtwebfont.woff2') format('woff2'),
+         url('/assets/fonts/sourcesans/sourcesans3variablefontwghtwebfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSans';
+    src: url('/assets/fonts/sourcesans/sourcesans3italicvariablefontwghtwebfont.woff2') format('woff2'),
+         url('/assets/fonts/sourcesans/sourcesans3italicvariablefontwghtwebfont.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}

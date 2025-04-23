@@ -1,0 +1,12 @@
+---
+layout: default
+active: "/curation"
+css: 
+  - "curation_page"
+  - "gallery"
+js: "gallery"
+---
+<h1 id="curation-title">{{page.title}}</h1>
+<h3 id="curation-year">{{page.year}}</h3>
+{% include gallery.html id="curation-gallery" %}
+{{ page.content }}

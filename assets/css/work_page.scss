@@ -1,0 +1,38 @@
+---
+---
+
+#work-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	column-gap: 30px;
+	align-items: flex-start;
+	width: 100%;
+
+	#work-img {
+		flex: 2 1 50%;
+		padding-bottom: 10px;
+		padding-left: 10px;
+		max-width: min(100%, 600px);
+	}
+
+	#work-info {
+		text-align: right;
+		flex: 1 1 40%;
+
+		#work-title {
+			font-size: 4em;
+			padding-bottom: .5em;
+		}
+
+		#work-specs {
+			font-size: 1.5em;
+		}
+
+		p {
+			flex: 1;
+			font-size: 1.5em;
+		}
+
+	}
+}

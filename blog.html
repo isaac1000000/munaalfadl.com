@@ -1,0 +1,25 @@
+---
+layout: default
+title: "blog"
+css: "blog"
+active: "/blog"
+---
+<div id="posts-box">
+	{% for post in site.categories.blog %}
+		<div class="post-box">
+			<a href="{{ post.url }}">
+				<img src="/assets/imgs/blog/{{ post.img }}" class="post-img">
+				<div class="post-title">
+					<h3>{{ post.title }}</h3>
+					<span class="post-date">
+						{{ post.date | date_to_string }}
+					</span>
+				</div>
+				<div class="post-excerpt">
+					<p>{{ post.excerpt | truncate: 700 }}
+					<span class="read-more">Read More →</span></p>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+</div>

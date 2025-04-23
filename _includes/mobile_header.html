@@ -1,0 +1,17 @@
+<div id="mobile-header" class="header">
+	<a class="home-link" href="/">
+		<img class="signature" alt="signature" src="/assets/imgs/elements/signature-{% if page.invert-nav %}white{% else %}black{% endif %}.png">
+	</a>
+	<button id="mobile-menu-button" type="button">
+  		<span class="mobile-menu-button-line"></span>
+	</button>
+	<div id="mobile-focus-cover" class="focus-cover"></div>
+	<div id="mobile-nav-box">
+		<button id="mobile-menu-close-button" type="button">
+			<span class="mobile-menu-close-button-line"></span>
+		</button>
+		<div id="mobile-nav-links">
+			{% include nav_links.html %}
+		</div>
+	</div>
+</div>

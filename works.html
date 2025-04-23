@@ -1,0 +1,22 @@
+---
+layout: default
+title: "works"
+css: "works"
+active: "/works"
+
+---
+<div id="works-box">
+	{% for work in site.works %}
+		<div class="work">
+			<a href="{{work.url}}" class="work-link">
+				<img class="work-link-thumbnail" src="/assets/imgs/works/{{work.thumbnailimg}}" loading="lazy">
+				<div class="work-desc">
+					<h3 class="title">{{ work.title }}</h3>
+					<span class="medium">{{ work.medium }}</span>
+					<span class="dimensions">{{ work.dimensions }}</span>
+					<span class="year">{{ work.year }}</span>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+</div>
