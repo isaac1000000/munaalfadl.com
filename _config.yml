@@ -1,8 +1,7 @@
-domain: munaafadl.com
+domain: munaalfadl.com
 url: https://munaalfadl.com
 baseurl: "/"
 title: "muna al fadl"
-encoding: utf-8
 collections:
   works:
     output: true
