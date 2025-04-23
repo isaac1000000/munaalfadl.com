@@ -4,5 +4,4 @@ source "https://rubygems.org"
 
 # gem "rails"
 
-gem "jekyll", "~> 3.10"
-gem "kramdown-parser-gfm"
+gem "github-pages"
