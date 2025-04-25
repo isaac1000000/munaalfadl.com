@@ -6,7 +6,7 @@ function expand(item){
     copy.style.height = '90vh'
     copy.style.top = '5vh'
     copy.style.width = 'auto'
-    copy.style.objectFit = 'contain'
+    copy.style.objectFit = 'cover'
     copy.style.maxWidth = '90vw'
     copy.style.left = '50%'
     copy.style.transform = 'translate(-50%, 0)'

@@ -19,6 +19,7 @@ function expand(item){
     focusFilter.style.height = '100vh'
     focusFilter.style.width = '100vw'
     focusFilter.style.backdropFilter = 'brightness(.2)'
+    focusFilter.style['-webkit-backdrop-filter'] = 'brightness(.2)'
     focusFilter.style.zIndex = '101'
 
     function unexpand() {
