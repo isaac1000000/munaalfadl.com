@@ -6,7 +6,7 @@ function expand(item){
     copy.style.height = '90vh'
     copy.style.top = '5vh'
     copy.style.width = 'auto'
-    copy.style.objectFit = 'cover'
+    copy.style.objectFit = 'contain'
     copy.style.maxWidth = '90vw'
     copy.style.left = '50%'
     copy.style.transform = 'translate(-50%, 0)'
@@ -19,6 +19,7 @@ function expand(item){
     focusFilter.style.height = '100vh'
     focusFilter.style.width = '100vw'
     focusFilter.style.backdropFilter = 'brightness(.2)'
+    focusFilter.style['-webkit-backdrop-filter'] = 'brightness(.2)'
     focusFilter.style.zIndex = '101'
 
     function unexpand() {
