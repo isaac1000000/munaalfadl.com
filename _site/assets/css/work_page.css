@@ -8,8 +8,6 @@
 }
 #work-box #work-img {
   flex: 2 1 50%;
-  padding-bottom: 10px;
-  padding-left: 10px;
   max-width: min(100%, 600px);
 }
 #work-box #work-info {
@@ -17,15 +15,15 @@
   flex: 1 1 40%;
 }
 #work-box #work-info #work-title {
-  font-size: 4em;
+  font-size: min(8vw, 4em);
   padding-bottom: 0.5em;
 }
 #work-box #work-info #work-specs {
-  font-size: 1.5em;
+  font-size: min(4vw, 1.5em);
 }
 #work-box #work-info p {
   flex: 1;
-  font-size: 1.5em;
+  font-size: min(4vw, 1.5em);
 }
 
 /*# sourceMappingURL=work_page.css.map */
