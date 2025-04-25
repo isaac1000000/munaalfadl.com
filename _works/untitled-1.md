@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "untitled"
 layout: work_page
 img: "untitled1.jpg"
 thumbnailimg: "untitled1-thumbnail.jpg"
