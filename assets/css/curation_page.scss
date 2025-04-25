@@ -3,16 +3,18 @@
 #curation-title {
 	display: block;
 	max-width: 100%;
-	font-size: 5em;
+	font-size: min(10vw, 5em);
+	white-space: wrap;
 	text-align: center;
 }
 #curation-year {
-	font-size: 3.5em;
+	font-size: min(7vw, 3.5em);
+	padding-top: 10px;
 	text-align: center;
 }
 #curation-gallery {
 	width: 60vw;
-	min-width: 340px;
+	min-width: 300px;
 	height: 60vh;
 	min-height: 250px;
 	margin: 40px auto;
