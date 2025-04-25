@@ -10,8 +10,8 @@ collections:
     output: true
     permalink: /curation/:title
 navigation:
-  - text: "about me"
-    url: "/about-me"
+  - text: "about"
+    url: "/about"
   - text: "works"
     url: "/works"
   - text: "curation"
