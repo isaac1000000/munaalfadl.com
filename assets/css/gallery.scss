@@ -58,6 +58,7 @@
 			border: 1px solid black;
 
 			&.active {
+				border-color: gray;
 				background-color: black;
 			}
 		}
