@@ -2,14 +2,13 @@ const items = [...document.getElementsByClassName('expandable')]
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-
 function expand(item){
     const copy = item.cloneNode(false)
     copy.style.position = 'fixed'
     copy.style.height = '90vh'
     copy.style.top = '5vh'
     copy.style.width = 'auto'
-    copy.style.objectFit = 'cover'
+    copy.style.objectFit = 'contain'
     copy.style.maxWidth = '90vw'
     copy.style.left = '50%'
     copy.style.transform = 'translate(-50%, 0)'
