@@ -7,6 +7,8 @@ collections:
     output: true
     permalink: /works/:title
     order:
+      - side-street-of-umayyad-mosque-google-earth.md
+      - the-confrontation.md
       - aleppo-citadel.md
       - damascus-souq-chair.md
       - untitled-1.md
