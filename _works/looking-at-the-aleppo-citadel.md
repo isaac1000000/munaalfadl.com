@@ -7,4 +7,5 @@ medium: "oil on wood"
 dimensions: "24 x 72 inches"
 year: 2024
 available: true
+grow: 2
 ---
