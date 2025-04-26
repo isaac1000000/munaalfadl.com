@@ -8,8 +8,8 @@ collections:
     permalink: /works/:title
     order:
       - umayyad-mosque-women's-section.md 
-      - damascus-souq-chair.md
       - side-street-of-umayyad-mosque-google-earth.md
+      - damascus-souq-chair.md
       - aleppo-citadel.md
       - listening-to-the-news.md 
       - mosque.md 
