@@ -6,6 +6,24 @@ collections:
   works:
     output: true
     permalink: /works/:title
+    order:
+      - aleppo-citadel.md
+      - damascus-souq-chair.md
+      - untitled-1.md
+      - arabic-breakfast-scene.md 
+      - boy-with-baguette.md 
+      - contemporary-syrian-face-covering.md 
+      - like-father-like-daughter.md 
+      - listening-to-the-news.md 
+      - looking-at-the-aleppo-citadel.md 
+      - looking-through-a-window.md 
+      - mosque.md 
+      - mourning-the-martyrdom.md 
+      - nadia-and-lena.md 
+      - pomegranate.md 
+      - the-neo-orientalist.md 
+      - the-scented-headpiece.md 
+      - umayyad-mosque-women's-section.md 
   curations:
     output: true
     permalink: /curation/:title

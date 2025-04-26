@@ -4,7 +4,7 @@ title: "works"
 css: "works"
 active: "/works"
 ---
-{% assign sorted_works = site.works | sort: 'year' | reverse %}
+{% assign sorted_works = site.works %}
 <div id="works-box">
 	{% for work in sorted_works %}
 		<div class="work" {% if work.grow %}style="flex-grow: {{work.grow}}"{% endif %}>
