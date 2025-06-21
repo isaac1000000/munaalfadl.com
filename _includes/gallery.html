@@ -5,7 +5,7 @@
 	<img src="/assets/svg/right.svg" class="right slide-arrow" onclick="incrementSlideIndex(1)">
 	{% for image in site.static_files %}
 		{% if image.path contains gallery_path %}
-			<img src="{{ image.path }}" class="gallery-slide">
+			<img src="{{ image.path }}" class="gallery-slide" loading="lazy">
 			{% assign gallery_size = gallery_size | plus: 1 %}
 		{% endif %}
 	{% endfor %}
