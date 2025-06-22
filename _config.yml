@@ -5,34 +5,33 @@ title: "muna al fadl"
 collections:
   works:
     output: true
-    permalink: /works/:title
+    permalink: /works/:path
     order:
-      - umayyad-mosque-women's-section.md 
-      - side-street-of-umayyad-mosque-google-earth.md
-      - damascus-souq-chair.md
-      - aleppo-citadel.md
-      - listening-to-the-news.md 
-      - mosque.md 
-      - looking-at-the-aleppo-citadel.md 
-      - the-confrontation.md
-      - looking-through-a-window.md 
-      - like-father-like-daughter.md 
-      - mourning-the-martyrdom.md 
-      - boy-with-baguette.md 
-      - untitled-1.md
-      - arabic-breakfast-scene.md 
-      - contemporary-syrian-face-covering.md 
-      - nadia-and-lena.md 
-      - pomegranate.md 
-      - the-neo-orientalist.md 
-      - the-scented-headpiece.md 
-
+      - 2025/umayyad-mosque-women's-section.md 
+      - 2025/side-street-of-umayyad-mosque-google-earth.md
+      - 2025/damascus-souq-chair.md
+      - 2025/aleppo-citadel.md
+      - 2025/listening-to-the-news.md 
+      - 2025/mosque.md 
+      - 2024/looking-at-the-aleppo-citadel.md 
+      - 2024/the-confrontation.md
+      - 2024/looking-through-a-window.md 
+      - 2024/like-father-like-daughter.md 
+      - 2024/mourning-the-martyrdom.md 
+      - 2024/boy-with-baguette.md 
+      - 2024/untitled-1.md
+      - 2022/arabic-breakfast-scene.md 
+      - 2023/contemporary-syrian-face-covering.md 
+      - 2023/nadia-and-lena.md 
+      - 2022/pomegranate.md 
+      - 2022/the-neo-orientalist.md 
+      - 2024/the-scented-headpiece.md 
   curations:
     output: true
-    permalink: /curation/:title
+    permalink: /curation/:path
     order:
-      - otherhalf.md
-      - homeland.md
+      - 2025/otherhalf.md
+      - 2024/homeland.md
 navigation:
   - text: "about"
     url: "/about"
