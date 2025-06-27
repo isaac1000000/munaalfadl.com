@@ -19,17 +19,17 @@
 /*		height: 250px;*/
 		overflow: hidden;
 
-		.work-link-thumbnail {
-			object-fit: cover;
-			width: 100%;
-			height: 100%;
-			vertical-align: top;
-		}
-
 		.work-link {
 			display: block;
 			width: 100%;
 			height: 100%;
+
+			.work-link-thumbnail {
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+				vertical-align: top;
+			}
 
 			.work-desc {
 				display: flex;
