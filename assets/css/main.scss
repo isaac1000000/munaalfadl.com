@@ -252,6 +252,7 @@ header {
 					width: 100%;
 					text-align: center;
 					white-space: nowrap;
+					cursor: pointer;
 
 					&::before {
 						content: '';
@@ -321,11 +322,12 @@ header {
 					}
 				}
 
-				&:hover .dropdown-content {
-					display: block;
+				// Only show dropdown on click (via .open class), not on hover
+				&.open .dropdown-content {
+					display: block !important;
 				}
 
-				&:hover > a::before {
+				&.open > a::before {
 					content: '';
 					display: block;
 					position: absolute;
