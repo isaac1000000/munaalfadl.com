@@ -1,8 +1,14 @@
 <nav>  
 	{% for link in site.navigation %}
 		{% if link.subpages %}
+			{% assign is_subpage_active = false %}
+			{% for subpage in link.subpages %}
+				{% if page.url == subpage.url %}
+					{% assign is_subpage_active = true %}
+				{% endif %}
+			{% endfor %}
 			<div class="dropdown">
-				<a {% if page.active == link.url or layout.active == link.url %}class="current"{% endif %}>{{link.text}}</a>
+				<a {% if page.active == link.url or layout.active == link.url or is_subpage_active %}class="current"{% endif %}>{{link.text}}</a>
 				<div class="dropdown-content">
 					{% for subpage in link.subpages %}
 						<a href="{{subpage.url}}" {% if page.url == subpage.url %}class="current"{% endif %}>{{subpage.text}}</a>
