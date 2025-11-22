@@ -19,8 +19,65 @@ header {
 	}
 
 	#desktop-header {
-		nav a:hover::before, nav a::before {
-			border-bottom: 2px solid white;
+		nav {
+			a, .dropdown > a {
+				color: white;
+
+				&::before {
+					border-bottom: 2px solid white;
+				}
+
+				&:hover::before {
+					border-bottom: 2px solid white;
+				}
+
+				&.current::before {
+					border-bottom: 2px solid white;
+				}
+			}
+
+			.dropdown {
+				> a {
+					color: white;
+
+					&::before {
+						border-bottom: 2px solid white;
+					}
+
+					&:hover::before {
+						border-bottom: 2px solid white;
+					}
+
+					&.current::before {
+						border-bottom: 2px solid white;
+					}
+				}
+
+				&.open > a::before {
+					border-bottom: 2px solid white;
+				}
+
+				.dropdown-content {
+					background-color: transparent;
+					box-shadow: none;
+
+					a {
+						color: white;
+
+						&:hover {
+							color: white;
+							background-color: transparent;
+							opacity: 0.7;
+						}
+
+						&.current {
+							color: white;
+							background-color: transparent;
+							opacity: 1;
+						}
+					}
+				}
+			}
 		}
 	}
 }
