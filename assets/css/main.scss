@@ -181,6 +181,99 @@ header {
 				a:hover {
 					color: gray;
 				}
+
+				.dropdown {
+					position: relative;
+					display: flex;
+					flex-direction: column;
+					align-items: flex-end;
+
+					> a {
+						display: flex;
+						align-items: center;
+						justify-content: flex-end;
+						gap: 8px;
+						cursor: pointer;
+						text-decoration: none;
+						width: 100%;
+
+						.dropdown-icon {
+							display: inline-flex;
+							align-items: center;
+							justify-content: center;
+							width: 18px;
+							height: 18px;
+							transform-origin: center center;
+							transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+							svg {
+								width: 100%;
+								height: 100%;
+								stroke: currentColor;
+								stroke-width: 0.8;
+								fill: none;
+								stroke-linecap: round;
+								stroke-linejoin: round;
+							}
+						}
+
+						&:hover {
+							color: gray;
+						}
+
+						&.current {
+							text-decoration: underline;
+						}
+					}
+
+					&.open > a .dropdown-icon {
+						transform: rotate(180deg);
+					}
+
+					.dropdown-content {
+						display: flex;
+						flex-direction: column;
+						align-items: flex-end;
+						width: 100%;
+						margin-top: 8px;
+						padding-right: 0;
+						max-height: 0;
+						opacity: 0;
+						overflow: hidden;
+						transform: translateY(-10px);
+						transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+						            opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+						            transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+						a {
+							display: block;
+							padding: 8px 0;
+							text-align: right;
+							text-decoration: none;
+							font-size: 0.9em;
+							color: #666;
+							width: 100%;
+							transition: color 0.3s, padding-right 0.3s;
+
+							&:hover {
+								color: gray;
+								padding-right: 10px;
+							}
+
+							&.current {
+								color: black;
+								text-decoration: underline;
+								font-weight: normal;
+							}
+						}
+					}
+
+					&.open .dropdown-content {
+						max-height: 500px;
+						opacity: 1;
+						transform: translateY(0);
+					}
+				}
 			}
 		}
 	}
