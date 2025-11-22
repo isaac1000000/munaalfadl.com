@@ -1,0 +1,15 @@
+---
+---
+#work-box {
+	flex-direction: column;
+
+    #work-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #work-info {
+        text-align: right;
+        align-self: flex-end;
+    }
+}

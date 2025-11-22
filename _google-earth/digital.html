@@ -5,10 +5,10 @@ css: "works"
 active: "/google-earth"
 ---
 <div id="works-box">
-	{% for work in site.works %}
+	{% for work in site.google-earth-digital %}
 		<div class="work" {% if work.grow %}style="flex-grow: {{work.grow}}"{% endif %}>
 			<a href="{{work.url}}" class="work-link" >
-				<img class="work-link-thumbnail" src="/assets/imgs/works/{{work.thumbnailimg}}" loading="lazy">
+				<img class="work-link-thumbnail" src="/assets/imgs/google-earth-digital/{{work.thumbnailimg}}" loading="lazy">
 				<div class="work-desc">
 					<h3 class="title">{{ work.title }}</h3>
 					<span class="medium">{{ work.medium }}</span>
