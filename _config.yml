@@ -32,12 +32,33 @@ collections:
     order:
       - 2025/otherhalf.md
       - 2024/homeland.md
+  google-earth:
+    output: true
+    permalink: /google-earth/:name
 navigation:
-  - text: "about"
-    url: "/about"
   - text: "works"
     url: "/works"
+  - text: "google earth"
+    url: "/google-earth"
+    subpages:
+      - text: "digital"
+        url: "/google-earth/digital"
+      - text: "physical"
+        url: "/google-earth/physical"
+      - text: "exploration"
+        url: "/google-earth/exploration"
+      - text: "essays"
+        url: "/google-earth/essays"
+      - text: "map"
+        url: "https://maps.munaalfadl.com"
   - text: "curation"
     url: "/curation"
-  - text: "contact"
-    url: "/contact"
+  - text: "about"
+    url: "/about"
+    subpages:
+      - text: "statement"
+        url: "/about/statement"
+      - text: "exhibitions"
+        url: "/about/exhibitions"
+      - text: "contact"
+        url: "/about/contact"
