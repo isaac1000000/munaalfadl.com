@@ -32,6 +32,11 @@ function expand(item){
 
     copy.addEventListener('click', unexpand)
     focusFilter.addEventListener('click', unexpand)
+    window.addEventListener('keydown', evt => {
+        if (evt.key === 'Escape') {
+            unexpand()
+        }
+    })
 
     item.parentElement.appendChild(focusFilter)
     item.parentElement.appendChild(copy)
