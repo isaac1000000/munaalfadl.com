@@ -311,6 +311,7 @@ header {
 				width: calc(100% * (1 / {{ site.navigation.size }}));
 				text-align: center;
 				white-space: nowrap;
+				box-sizing: border-box;
 
 				&::before {
 					content: '';
@@ -361,6 +362,7 @@ header {
 					white-space: nowrap;
 					cursor: pointer;
 					gap: 8px;
+					box-sizing: border-box;
 
 					.dropdown-icon {
 						display: inline-flex;
@@ -369,7 +371,7 @@ header {
 						width: 22px;
 						height: 22px;
 						margin-left: 0px;
-						margin-top: 3px;
+						margin-top: 0px;
 						vertical-align: baseline;
 						transform-origin: center center;
 						transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
