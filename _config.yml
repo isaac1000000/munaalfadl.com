@@ -42,7 +42,7 @@ navigation:
   - text: "works"
     url: "/works"
   - text: "google earth"
-    url: "/google-earth"
+    url: "/404"
     subpages:
       - text: "digital"
         url: "/google-earth/digital"
@@ -57,7 +57,7 @@ navigation:
   - text: "curation"
     url: "/curation"
   - text: "about"
-    url: "/about"
+    url: "/404"
     subpages:
       - text: "statement"
         url: "/about/statement"
