@@ -8,4 +8,5 @@ dimensions: "18 x 54 inches"
 year: 2025
 available: true
 grow: 3
+series: "google earth"
 ---
