@@ -10,15 +10,6 @@ main {
 	margin-top: 80px; /* Account for fixed header */
 	
 	#essay-page {
-		#essay-hero-img {
-			width: 100%;
-			max-height: 500px;
-			object-fit: cover;
-			border-radius: 8px;
-			margin-bottom: 40px;
-			display: block;
-		}
-
 		#essay-header {
 			text-align: center;
 			margin-bottom: 50px;
@@ -36,7 +27,7 @@ main {
 
 			#essay-date {
 				display: block;
-				font-size: 1em;
+				font-size: 1.5em;
 				opacity: 0.7;
 				font-style: italic;
 			}
@@ -56,13 +47,6 @@ main {
 				white-space: normal;
 				word-wrap: break-word;
 				overflow-wrap: break-word;
-			}
-
-			p:first-of-type {
-				font-size: 1.2em;
-				line-height: 1.9;
-				font-weight: 400;
-				margin-top: 0;
 			}
 
 			br {
@@ -94,10 +78,6 @@ main {
 
 			#essay-content {
 				font-size: 1em;
-
-				p:first-of-type {
-					font-size: 1.1em;
-				}
 			}
 		}
 	}

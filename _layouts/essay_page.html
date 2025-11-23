@@ -4,9 +4,6 @@ active: "/google-earth"
 css: "essay_page"
 ---
 <article id="essay-page">
-	{% if page.thumbnail %}
-	<img src="/assets/imgs/essays/{{ page.thumbnail }}" id="essay-hero-img">
-	{% endif %}
 	<div id="essay-header">
 		<h1 id="essay-title"><em>{{ page.title }}</em></h1>
 		{% if page.date %}

@@ -2,7 +2,6 @@
 layout: essay_page
 title: "(re)constructing the city of jasmine"
 date: 2025-05-09
-thumbnail: "reconstructing-the-city-of-jasmine-thumbnail.png"
 ---
 Reconstructing a city that has been destroyed and rebuilt over ten times is a pointless task. Her people will clean the streets, repair the holes, and rebuild homes from the rubble. But rather than reconstruct Damascus with my panels and brush, I am (re)constructing a fragmented memory of a ground my toes have never touched. A ground that thousands of Damascene people have never seen or have not seen in ten years. A collective nostalgia, or lack thereof. 
 

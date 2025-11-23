@@ -5,4 +5,5 @@ img: "googleearth333043n361823e-digital.jpg"
 thumbnailimg: "googleearth333043n361823e-digital-thumbnail.jpg"
 medium: "digital"
 year: 2025
+grow: 2
 ---

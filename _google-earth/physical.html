@@ -7,7 +7,7 @@ active: "/google-earth"
 <div id="works-box">
 	{% assign google_earth_physical = site.works | where: "series", "google earth" %}
 	{% for work in google_earth_physical %}
-		<div class="work" {% if work.grow %}style="flex-grow: {{work.grow}}"{% endif %}>
+		<div class="work" {% if work.grow %}style="--grow: {{work.grow}};"{% endif %}>
 			<a href="{{work.url}}" class="work-link" >
 				<img class="work-link-thumbnail" src="/assets/imgs/works/{{work.thumbnailimg}}" loading="lazy">
 				<div class="work-desc">
