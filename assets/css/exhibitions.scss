@@ -1,0 +1,103 @@
+---
+---
+
+#exhibitions-page {
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px 20px;
+
+	.exhibition-section {
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.section-title {
+			font-size: 1.4em;
+			margin-bottom: 15px;
+			padding-bottom: 8px;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			text-align: left;
+		}
+
+		.exhibition-item {
+			margin-bottom: 8px;
+			padding: 4px 0;
+			line-height: 1.4;
+			display: block;
+
+			.exhibition-name {
+				font-size: 0.9em;
+				font-weight: 600;
+				margin: 0;
+				color: #333;
+				font-family: "PlayfairDisplay";
+			}
+
+			.exhibition-details {
+				font-size: 0.85em;
+				margin: 0;
+				color: #555;
+				font-style: italic;
+			}
+
+			.exhibition-curator {
+				font-size: 0.8em;
+				margin: 0;
+				color: #666;
+			}
+
+			.exhibition-date {
+				font-size: 0.8em;
+				margin: 0;
+				color: #888;
+				font-weight: 500;
+			}
+
+			span {
+				display: inline;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	#exhibitions-page {
+		padding: 15px 15px;
+
+		.exhibition-section {
+			margin-bottom: 25px;
+
+			.section-title {
+				font-size: 1.2em;
+				margin-bottom: 12px;
+			}
+
+			.exhibition-item {
+				margin-bottom: 8px;
+				padding: 4px 0;
+				line-height: 1.4;
+
+				.exhibition-name {
+					font-size: 0.85em;
+				}
+
+				.exhibition-details {
+					font-size: 0.8em;
+				}
+
+				.exhibition-curator,
+				.exhibition-date {
+					font-size: 0.75em;
+				}
+
+				span {
+					display: inline;
+				}
+			}
+		}
+	}
+}
+
