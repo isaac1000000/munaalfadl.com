@@ -1,17 +1,34 @@
 {% capture gallery_path %}assets/imgs/curations/{{ page.gallerysrc }}/gallery{% endcapture %}
 {% assign gallery_size = -1 %}
-<div id="{{include.id}}" class="gallery">
-	<img src="/assets/svg/left.svg" class="left slide-arrow" onclick="incrementSlideIndex(-1)">
-	<img src="/assets/svg/right.svg" class="right slide-arrow" onclick="incrementSlideIndex(1)">
-	{% for image in site.static_files %}
-		{% if image.path contains gallery_path %}
-			<img src="{{ image.path }}" class="gallery-slide" loading="lazy">
-			{% assign gallery_size = gallery_size | plus: 1 %}
+{% assign first_image = "" %}
+{% for image in site.static_files %}
+	{% if image.path contains gallery_path %}
+		{% if gallery_size == -1 %}
+			{% assign first_image = image.path %}
 		{% endif %}
-	{% endfor %}
-	<div class="dot-box">
-		{% for i in (0..gallery_size) %}
-			<span class="slide-dot" onclick="setSlide({{i}})"></span>
-		{% endfor %}
+		{% assign gallery_size = gallery_size | plus: 1 %}
+	{% endif %}
+{% endfor %}
+
+{% if gallery_size == 0 %}
+	{% comment %} Only one image, display it directly without gallery controls {% endcomment %}
+	<div id="{{include.id}}" class="gallery-single">
+		<img src="{{ first_image }}" class="gallery-single-image" loading="lazy">
 	</div>
-</div>
+{% else %}
+	{% comment %} Multiple images, display full gallery {% endcomment %}
+	<div id="{{include.id}}" class="gallery">
+		<img src="/assets/svg/left.svg" class="left slide-arrow" onclick="incrementSlideIndex(-1)">
+		<img src="/assets/svg/right.svg" class="right slide-arrow" onclick="incrementSlideIndex(1)">
+		{% for image in site.static_files %}
+			{% if image.path contains gallery_path %}
+				<img src="{{ image.path }}" class="gallery-slide" loading="lazy">
+			{% endif %}
+		{% endfor %}
+		<div class="dot-box">
+			{% for i in (0..gallery_size) %}
+				<span class="slide-dot" onclick="setSlide({{i}})"></span>
+			{% endfor %}
+		</div>
+	</div>
+{% endif %}
