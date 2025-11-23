@@ -65,17 +65,14 @@ main {
 				margin-top: 0;
 			}
 
-			// Handle line breaks within paragraphs
 			br {
 				line-height: 1.8;
 			}
 
-			// Ensure proper spacing for consecutive paragraphs
 			p + p {
 				margin-top: 1.5em;
 			}
 
-			// Handle empty paragraphs (for spacing)
 			p:empty {
 				margin: 0;
 				height: 0;

@@ -6,7 +6,7 @@ active: "/works"
 ---
 <div id="works-box">
 	{% for work in site.works %}
-		<div class="work" {% if work.grow %}style="flex-grow: {{work.grow}}"{% endif %}>
+		<div class="work" {% if work.grow %}style="--grow: {{work.grow}};"{% endif %}>
 			<a href="{{work.url}}" class="work-link" >
 				<img class="work-link-thumbnail" src="/assets/imgs/works/{{work.thumbnailimg}}" loading="lazy">
 				<div class="work-desc">

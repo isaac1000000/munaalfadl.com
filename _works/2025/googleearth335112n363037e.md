@@ -7,5 +7,5 @@ medium: "wood stain, ink, and oil on wood panel"
 dimensions: "24 x 72 inches"
 year: 2025
 series: "google earth"
-grow: 3
+grow: 2
 ---

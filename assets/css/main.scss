@@ -483,7 +483,6 @@ header {
 					}
 				}
 
-				// Only show dropdown on click (via .open class), not on hover
 				&.open .dropdown-content {
 					max-height: 500px;
 					opacity: 1;

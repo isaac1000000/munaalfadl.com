@@ -7,5 +7,5 @@ dimensions: "18 x 54 inches"
 medium: "woodsman, ink and oil on wood panel"
 year: 2025
 series: "google earth"
-grow: 3
+grow: 2
 ---
