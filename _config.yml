@@ -35,6 +35,8 @@ collections:
     permalink: /curation/:path
     order:
       - 2025/otherhalf.md
+      - 2025/horsemarket.md
+      - 2024/palestinianshortfilm.md
       - 2024/homeland.md
   google-earth:
     output: true
