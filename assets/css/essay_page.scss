@@ -1,0 +1,108 @@
+---
+---
+
+main {
+	max-width: 800px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 40px 20px;
+	margin-top: 80px; /* Account for fixed header */
+	
+	#essay-page {
+		#essay-hero-img {
+			width: 100%;
+			max-height: 500px;
+			object-fit: cover;
+			border-radius: 8px;
+			margin-bottom: 40px;
+			display: block;
+		}
+
+		#essay-header {
+			text-align: center;
+			margin-bottom: 50px;
+			padding-bottom: 30px;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+			#essay-title {
+				width: 100%;
+				font-size: 2.5em;
+				margin: 0 0 15px 0;
+				line-height: 1.2;
+				word-wrap: break-word;
+				overflow-wrap: break-word;
+			}
+
+			#essay-date {
+				display: block;
+				font-size: 1em;
+				opacity: 0.7;
+				font-style: italic;
+			}
+		}
+
+		#essay-content {
+			font-size: 1.1em;
+			line-height: 1.8;
+			color: #333;
+			white-space: normal;
+
+			p {
+				margin-bottom: 1.5em;
+				margin-top: 0;
+				text-align: justify;
+				hyphens: auto;
+				white-space: normal;
+				word-wrap: break-word;
+				overflow-wrap: break-word;
+			}
+
+			p:first-of-type {
+				font-size: 1.2em;
+				line-height: 1.9;
+				font-weight: 400;
+				margin-top: 0;
+			}
+
+			// Handle line breaks within paragraphs
+			br {
+				line-height: 1.8;
+			}
+
+			// Ensure proper spacing for consecutive paragraphs
+			p + p {
+				margin-top: 1.5em;
+			}
+
+			// Handle empty paragraphs (for spacing)
+			p:empty {
+				margin: 0;
+				height: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	main {
+		padding: 20px 15px;
+
+		#essay-page {
+			#essay-header {
+				#essay-title {
+					font-size: 2em;
+				}
+			}
+
+			#essay-content {
+				font-size: 1em;
+
+				p:first-of-type {
+					font-size: 1.1em;
+				}
+			}
+		}
+	}
+}
+
