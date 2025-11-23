@@ -58,8 +58,6 @@ navigation:
         url: "/google-earth/digital"
       - text: "physical"
         url: "/google-earth/physical"
-      - text: "exploration"
-        url: "/google-earth/exploration"
       - text: "essays"
         url: "/google-earth/essays"
       - text: "map"
