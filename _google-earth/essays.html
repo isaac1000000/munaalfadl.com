@@ -1,7 +1,27 @@
 ---
 layout: default
-title: "works"
-css: "works"
+title: "essays"
+css: "essays"
 active: "/google-earth"
 ---
-
+<div id="essays-box">
+	{% for essay in site.essays %}
+		<div class="essay-box">
+			<a href="{{essay.url}}">
+				<img src="/assets/imgs/essays/{{essay.thumbnail}}" class="essay-img">
+				<div class="essay-title">
+					<h3><em>{{ essay.title }}</em></h3>
+					{% if essay.date %}
+					<span class="essay-date">
+						{{ essay.date | date: "%B %-d, %Y" }}
+					</span>
+					{% endif %}
+				</div>
+				<div class="essay-excerpt">
+					<p>{{ essay.content | strip_html | truncate: 400 }}
+					<span class="read-more">Read More →</span></p>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+</div>
