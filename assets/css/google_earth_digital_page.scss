@@ -4,6 +4,8 @@
 	flex-direction: column;
 
     #work-img {
+        flex: none;
+        width: 100%;
         max-width: 100%;
         height: auto;
     }
