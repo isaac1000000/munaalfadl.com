@@ -49,7 +49,7 @@ collections:
     permalink: /about/:name
   essays:
     output: true
-    permalink: /essays/:name
+    permalink: /google-earth/essays/:name
 navigation:
   - text: "works"
     url: "/works"

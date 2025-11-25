@@ -1,4 +1,8 @@
 <nav>  
+	{% assign is_google_earth_page = false %}
+	{% if page.url contains "/google-earth" or page.series == "google earth" %}
+		{% assign is_google_earth_page = true %}
+	{% endif %}
 	{% for link in site.navigation %}
 		{% if link.subpages %}
 			{% assign is_subpage_active = false %}
@@ -6,17 +10,25 @@
 				{% if page.url == subpage.url %}
 					{% assign is_subpage_active = true %}
 				{% endif %}
+				{% if page.url contains subpage.url and subpage.url != "" %}
+					{% assign is_subpage_active = true %}
+				{% endif %}
 			{% endfor %}
+			{% if link.text == "google earth" %}
+				{% if is_google_earth_page %}
+					{% assign is_subpage_active = true %}
+				{% endif %}
+			{% endif %}
 			<div class="dropdown">
-				<a {% if page.active == link.url or layout.active == link.url or is_subpage_active %}class="current"{% endif %}>{{link.text}}<span class="dropdown-icon"><svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M2 4 L6 8 L10 4" /></svg></span></a>
+				<a {% if page.active == link.url or layout.active == link.url or is_subpage_active or is_google_earth_page and link.text == "google earth" %}class="current"{% endif %}>{{link.text}}<span class="dropdown-icon"><svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M2 4 L6 8 L10 4" /></svg></span></a>
 				<div class="dropdown-content">
 					{% for subpage in link.subpages %}
-						<a href="{{subpage.url}}" {% if page.url == subpage.url %}class="current"{% endif %}>{{subpage.text}}</a>
+						<a href="{{subpage.url}}" {% if page.url == subpage.url or page.url contains subpage.url and subpage.url != "" %}class="current"{% endif %}>{{subpage.text}}</a>
 					{% endfor %}
 				</div>
 			</div>
 		{% else %}
-			<a href="{{link.url}}" {% if page.active == link.url or layout.active == link.url %}class="current"{% endif %}>{{link.text}}</a>
+			<a href="{{link.url}}" {% if page.active == link.url or layout.active == link.url %}{% unless is_google_earth_page %}class="current"{% endunless %}{% endif %}>{{link.text}}</a>
 		{% endif %}
     {% endfor %}
 </nav>
