@@ -7,6 +7,37 @@ let currentTimer = null;
 let slideIndex = 0;
 displaySlide(slideIndex);
 
+// Preload gallery images sequentially
+function preloadImagesSequentially() {
+	if (slides.length === 0) return;
+	
+	let index = 0;
+	
+	function loadNext() {
+		if (index >= slides.length) return;
+		
+		const img = new Image();
+		img.onload = function() {
+			index++;
+			loadNext();
+		};
+		img.onerror = function() {
+			index++;
+			loadNext();
+		};
+		img.src = slides[index].src;
+	}
+	
+	loadNext();
+}
+
+// Start preloading when DOM is ready
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', preloadImagesSequentially);
+} else {
+	preloadImagesSequentially();
+}
+
 function incrementSlideIndex(x) {
 	slideIndex += x;
 	displaySlide(slideIndex)
