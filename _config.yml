@@ -50,9 +50,14 @@ collections:
   essays:
     output: true
     permalink: /google-earth/essays/:name
+# temporary: pins desktop nav item width while "works" and "curation" are
+# hidden, so the remaining links keep their old size. Remove to go back to
+# sizing by the actual number of nav items.
+nav_slots: 4
 navigation:
-  - text: "works"
-    url: "/works"
+  # temporarily hidden
+  # - text: "works"
+  #   url: "/works"
   - text: "google earth"
     url: "/404"
     subpages:
@@ -64,8 +69,9 @@ navigation:
         url: "/google-earth/essays"
       - text: "map"
         url: "https://maps.munaalfadl.com"
-  - text: "curation"
-    url: "/curation"
+  # temporarily hidden
+  # - text: "curation"
+  #   url: "/curation"
   - text: "about"
     url: "/404"
     subpages:
