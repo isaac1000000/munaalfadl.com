@@ -4,6 +4,8 @@ body, html, main {
 	max-height: 100vh;
 	max-width: 100vw;
 	overflow: hidden;
+	/* average colour of the hero, so it doesn't flash white before it loads */
+	background-color: #978876;
 }
 
 header {

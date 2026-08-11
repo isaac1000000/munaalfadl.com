@@ -20,7 +20,10 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/imgs/og-default.jpg
+      image:
+        path: /assets/imgs/og-default.jpg
+        width: 1200
+        height: 630
   - scope:
       path: ""
       type: works
