@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/playfairdisplay/playfairdisplayvariablefontwghtwebfont.woff2">
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/sourcesans/sourcesans3variablefontwghtwebfont.woff2">
+    {% if page.preload_image %}<link rel="preload" as="image" type="image/webp" href="{{ page.preload_image }}" fetchpriority="high">{% endif %}
     <link rel="stylesheet" href="/assets/css/normalize.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     {% if layout.css %}
