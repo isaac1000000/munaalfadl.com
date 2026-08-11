@@ -4,7 +4,10 @@ alt: "Painting from the Google Earth series, 33°31'02\"N 36°16'09\"E, in oil o
 description: "Painting from the Google Earth series, 33°31'02\"N 36°16'09\"E, in oil on linen, 12 x 36 inches, 2025. Work by Muna Al Fadl."
 layout: work_page
 img: "googleearth333102n361609e.jpeg"
-image: "/assets/imgs/works/googleearth333102n361609e.jpeg"
+image:
+  path: "/assets/imgs/works/googleearth333102n361609e.jpeg"
+  width: 2200
+  height: 729
 thumbnailimg: "googleearth333102n361609e-thumbnail.jpeg"
 medium: "oil on linen"
 dimensions: "12 x 36 inches"
