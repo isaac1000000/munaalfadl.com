@@ -5,11 +5,11 @@ css: "work_page"
 js: "expandable"
 ---
 <div id="work-box">
-	<img src="/assets/imgs/works/{{ page.img }}" id="work-img" class="expandable">
+	{% include picture.html dir="/assets/imgs/works" file=page.img alt=page.alt id="work-img" class="expandable" %}
 	<div id="work-info">
 		<h1 id="work-title"> <em>{{ page.title }} </em></h1>
 		<div id="work-specs">
-			{% if page.series %}<h3>"{{ page.series }}" series</h3>{% endif %}
+			{% if page.series %}<h3><a href="/google-earth/physical">"{{ page.series }}" series</a></h3>{% endif %}
 			<h3>{{ page.medium }}</h3>
 			<h3>{{ page.dimensions }}</h3>
 			<h3>{{ page.year }}</h3>

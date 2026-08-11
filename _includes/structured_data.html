@@ -1,0 +1,98 @@
+{% if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Muna Al Fadl",
+  "url": "{{ site.url }}/",
+  "image": "{{ site.url }}/assets/imgs/about/about.jpg",
+  "jobTitle": "Artist",
+  "description": {{ site.description | strip_newlines | strip | jsonify }},
+  "email": "mailto:munaalfadel03@gmail.com",
+  "sameAs": ["https://www.instagram.com/alfadl.png/"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "addressCountry": "US"
+  }
+}
+</script>
+{% endif %}
+
+{% if page.layout == "work_page" or page.layout == "google_earth_digital_page" %}
+{% if page.layout == "work_page" %}{% assign imgdir = "works" %}{% else %}{% assign imgdir = "google-earth-digital" %}{% endif %}
+{% assign dims = page.dimensions | remove: " inches" | split: " x " %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VisualArtwork",
+  "name": {{ page.title | jsonify }},
+  "url": "{{ site.url }}{{ page.url }}",
+  "image": "{{ site.url }}/assets/imgs/{{ imgdir }}/{{ page.img }}",
+  "artist": {
+    "@type": "Person",
+    "name": "Muna Al Fadl",
+    "url": "{{ site.url }}/"
+  },
+  "artMedium": {{ page.medium | jsonify }},
+  "artform": "{% if page.medium == 'digital' %}Digital art{% else %}Painting{% endif %}",
+  "dateCreated": "{{ page.year }}",
+  {% if page.series %}"isPartOf": {{ page.series | jsonify }},{% endif %}
+  {% if dims.size == 2 %}
+  "width": { "@type": "QuantitativeValue", "value": {{ dims[0] | strip }}, "unitText": "inches" },
+  "height": { "@type": "QuantitativeValue", "value": {{ dims[1] | strip }}, "unitText": "inches" },
+  {% endif %}
+  "creator": { "@type": "Person", "name": "Muna Al Fadl" }
+}
+</script>
+{% endif %}
+
+{% if page.layout == "essay_page" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "url": "{{ site.url }}{{ page.url }}",
+  {% if page.date %}"datePublished": "{{ page.date | date_to_xmlschema }}",{% endif %}
+  "author": { "@type": "Person", "name": "Muna Al Fadl", "url": "{{ site.url }}/" },
+  "publisher": { "@type": "Person", "name": "Muna Al Fadl" },
+  "description": {{ page.content | strip_html | strip_newlines | truncate: 300 | jsonify }}
+}
+</script>
+{% endif %}
+
+{% if page.url == "/about/exhibitions" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Exhibitions — Muna Al Fadl",
+  "itemListElement": [
+    {%- assign total = 0 -%}
+    {%- for group in site.data.exhibitions -%}{%- assign total = total | plus: group.items.size -%}{%- endfor -%}
+    {%- assign n = 0 -%}
+    {%- for group in site.data.exhibitions -%}
+      {%- for e in group.items -%}
+        {%- assign n = n | plus: 1 -%}
+    {
+      "@type": "ListItem",
+      "position": {{ n }},
+      "item": {
+        "@type": "ExhibitionEvent",
+        "name": {{ e.name | jsonify }},
+        "startDate": "{{ e.startDate }}",
+        "location": { "@type": "Place", "name": {{ e.venue | jsonify }} },
+        "performer": { "@type": "Person", "name": "Muna Al Fadl" }
+        {%- if e.curator %},
+        "organizer": { "@type": "Person", "name": {{ e.curator | remove: "Curated by " | remove: "Curated By " | remove: "Co-curated by " | jsonify }} }
+        {%- endif %}
+      }
+    }{% unless n == total %},{% endunless %}
+      {%- endfor -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+{% endif %}

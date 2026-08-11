@@ -46,6 +46,17 @@ a {
 	color: inherit;
 }
 
+picture {
+	display: contents;
+}
+
+/* width/height attributes are set for aspect-ratio only; sizing stays in css */
+img {
+	width: auto;
+	height: auto;
+}
+
+
 #content-wrapper {
 	min-height: 100%;
 	height: 100%;
@@ -588,6 +599,7 @@ button {
     src: url('/assets/fonts/playfairdisplay/playfairdisplayvariablefontwghtwebfont.woff2') format('woff2'),
          url('/assets/fonts/playfairdisplay/playfairdisplayvariablefontwghtwebfont.woff') format('woff');
     font-weight: 0;
+    font-display: swap;
     font-style: normal;
 }
 
@@ -596,6 +608,7 @@ button {
     src: url('/assets/fonts/sourcesans/sourcesans3variablefontwghtwebfont.woff2') format('woff2'),
          url('/assets/fonts/sourcesans/sourcesans3variablefontwghtwebfont.woff') format('woff');
     font-weight: 400;
+    font-display: swap;
     font-style: normal;
 }
 
@@ -604,5 +617,6 @@ button {
     src: url('/assets/fonts/sourcesans/sourcesans3italicvariablefontwghtwebfont.woff2') format('woff2'),
          url('/assets/fonts/sourcesans/sourcesans3italicvariablefontwghtwebfont.woff') format('woff');
     font-weight: 400;
+    font-display: swap;
     font-style: italic;
 }

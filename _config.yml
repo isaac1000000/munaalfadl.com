@@ -1,7 +1,52 @@
-domain: munaalfadl.com
-url: https://munaalfadl.com
-baseurl: "/"
+domain: www.munaalfadl.com
+url: https://www.munaalfadl.com
+baseurl: ""
 title: "muna al fadl"
+description: >-
+  Muna Al Fadl is a New York City-based artist primarily focusing on the
+  destruction, reconstruction, and fragmentation of memory and space within
+  the Damascus cityscape.
+author:
+  name: "Muna Al Fadl"
+  email: "munaalfadel03@gmail.com"
+social:
+  name: "Muna Al Fadl"
+  links:
+    - https://www.instagram.com/alfadl.png/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+defaults:
+  - scope:
+      path: ""
+      type: works
+    values:
+      seo:
+        type: WebPage
+  - scope:
+      path: ""
+      type: google-earth-digital
+    values:
+      seo:
+        type: WebPage
+  - scope:
+      path: ""
+      type: curations
+    values:
+      seo:
+        type: WebPage
+  - scope:
+      path: ""
+      type: about
+    values:
+      seo:
+        type: WebPage
+  - scope:
+      path: ""
+      type: essays
+    values:
+      seo:
+        type: Article
 collections:
   works:
     output: true

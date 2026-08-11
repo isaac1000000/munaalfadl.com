@@ -1,7 +1,8 @@
 ---
 layout: default
 published: false # temporarily hidden
-title: "works"
+title: "paintings"
+description: "Paintings by Muna Al Fadl in woodstain, ink and oil on wood panel, drawing on the architecture and daily life of Damascus."
 css: "works"
 active: "/works"
 ---
@@ -9,7 +10,7 @@ active: "/works"
 	{% for work in site.works %}
 		<div class="work" {% if work.grow %}style="--grow: {{work.grow}};"{% endif %}>
 			<a href="{{work.url}}" class="work-link" >
-				<img class="work-link-thumbnail" src="/assets/imgs/works/{{work.thumbnailimg}}" loading="lazy">
+				{% include picture.html dir="/assets/imgs/works" file=work.thumbnailimg alt=work.alt class="work-link-thumbnail" loading="lazy" %}
 				<div class="work-desc">
 					<h3 class="title"><em>{{ work.title }}</em></h3>
 					<span class="medium">{{ work.medium }}</span>
