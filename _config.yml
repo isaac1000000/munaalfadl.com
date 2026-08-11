@@ -19,6 +19,10 @@ plugins:
 defaults:
   - scope:
       path: ""
+    values:
+      image: /assets/imgs/og-default.jpg
+  - scope:
+      path: ""
       type: works
     values:
       seo:
