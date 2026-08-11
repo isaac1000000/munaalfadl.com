@@ -1,6 +1,7 @@
 <div id="mobile-header" class="header">
 	<a class="home-link" href="/">
-		<img class="signature" alt="signature" src="/assets/imgs/elements/signature-{% if page.invert-nav %}white{% else %}black{% endif %}.png">
+		{% if page.invert-nav %}{% assign sig = "signature-white.png" %}{% else %}{% assign sig = "signature-black.png" %}{% endif %}
+		{% include picture.html dir="/assets/imgs/elements" file=sig alt="Muna Al Fadl" class="signature" %}
 	</a>
 	<button id="mobile-menu-button" type="button">
   		<span class="mobile-menu-button-line"></span>

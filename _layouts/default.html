@@ -5,13 +5,9 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="/assets/css/normalize.css">    
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/playfairdisplay/playfairdisplayvariablefontwghtwebfont.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/sourcesans/sourcesans3variablefontwghtwebfont.woff2">
+    <link rel="stylesheet" href="/assets/css/normalize.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     {% if layout.css %}
       {% for stylesheet in layout.css %}
@@ -23,6 +19,12 @@
       <link rel="stylesheet" href="/assets/css/{{ stylesheet }}.css">
       {% endfor %}
     {% endif %}
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <script src="/assets/js/main.js" type="text/javascript" defer></script>
     {% if layout.js %}
       {% for js_file in layout.js %}
@@ -63,6 +65,8 @@
         });
       }
     </script>
+    {% seo title=false %}
+    {% include structured_data.html %}
   </head>
   <body>
     <div id="content-wrapper">

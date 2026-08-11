@@ -2,6 +2,7 @@
 layout: default
 published: false # temporarily hidden
 title: "curation"
+description: "Exhibitions curated by Muna Al Fadl, including Horsemarket, Homeland and The Other Half of the Story."
 active: "/curation"
 css: "curation"
 ---
@@ -9,7 +10,7 @@ css: "curation"
 	{% for curation in site.curations %}
 		<div class="curation">
 			<a href="{{curation.url}}" class="curation-link">
-				<img class="curation-link-thumbnail" src="/assets/imgs/curations/{{curation.gallerysrc}}/thumbnail.jpg" loading="lazy">
+				{% assign cdir = "/assets/imgs/curations/" | append: curation.gallerysrc %}{% include picture.html dir=cdir file="thumbnail.jpg" alt=curation.title class="curation-link-thumbnail" loading="lazy" %}
 				<div class="curation-title-box">
 					<h3 class="curation-title"><em>{{ curation.title }}</em></h3>
 				</div>

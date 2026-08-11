@@ -2,7 +2,7 @@
 {% assign gallery_size = -1 %}
 {% assign first_image = "" %}
 {% for image in site.static_files %}
-	{% if image.path contains gallery_path %}
+	{% if image.path contains gallery_path and image.extname != ".webp" %}
 		{% if gallery_size == -1 %}
 			{% assign first_image = image.path %}
 		{% endif %}
@@ -13,16 +13,20 @@
 {% if gallery_size == 0 %}
 	{% comment %} Only one image, display it directly without gallery controls {% endcomment %}
 	<div id="{{include.id}}" class="gallery-single">
-		<img src="{{ first_image }}" class="gallery-single-image" loading="lazy">
+		{% capture single_alt %}Installation view of {{ page.title }}{% endcapture %}
+		{% include picture.html src=first_image alt=single_alt class="gallery-single-image" loading="lazy" %}
 	</div>
 {% else %}
 	{% comment %} Multiple images, display full gallery {% endcomment %}
 	<div id="{{include.id}}" class="gallery">
-		<img src="/assets/svg/left.svg" class="left slide-arrow" onclick="incrementSlideIndex(-1)">
-		<img src="/assets/svg/right.svg" class="right slide-arrow" onclick="incrementSlideIndex(1)">
+		<img src="/assets/svg/left.svg" alt="Previous image" width="40" height="40" class="left slide-arrow" onclick="incrementSlideIndex(-1)">
+		<img src="/assets/svg/right.svg" alt="Next image" width="40" height="40" class="right slide-arrow" onclick="incrementSlideIndex(1)">
+		{% assign slide_no = 0 %}
 		{% for image in site.static_files %}
-			{% if image.path contains gallery_path %}
-				<img src="{{ image.path }}" class="gallery-slide" loading="lazy">
+			{% if image.path contains gallery_path and image.extname != ".webp" %}
+				{% assign slide_no = slide_no | plus: 1 %}
+				{% capture slide_alt %}Installation view {{ slide_no }} of {{ gallery_size | plus: 1 }} from {{ page.title }}{% endcapture %}
+				{% include picture.html src=image.path alt=slide_alt class="gallery-slide" loading="lazy" %}
 			{% endif %}
 		{% endfor %}
 		<div class="dot-box">

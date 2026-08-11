@@ -6,7 +6,7 @@ css:
 js: "expandable"
 ---
 <div id="work-box">
-	<img src="/assets/imgs/google-earth-digital/{{ page.img }}" id="work-img" class="expandable">
+	{% include picture.html dir="/assets/imgs/google-earth-digital" file=page.img alt=page.alt id="work-img" class="expandable" %}
 	<div id="work-info">
 		<h1 id="work-title"> <em>{{ page.title }} </em></h1>
 		<div id="work-specs">
