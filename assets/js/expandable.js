@@ -3,17 +3,23 @@ const items = [...document.getElementsByClassName('expandable')]
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 function expand(item){
-    const copy = item.cloneNode(false)
-    copy.style.position = 'fixed'
-    copy.style.height = '90vh'
-    copy.style.top = '5vh'
-    copy.style.width = 'auto'
-    copy.style.objectFit = 'contain'
-    copy.style.maxWidth = '90vw'
-    copy.style.left = '50%'
-    copy.style.transform = 'translate(-50%, 0)'
-    copy.style['-webkit-transform'] = 'translate(-50%, 0)'
-    copy.style.zIndex = '102'
+    // the img sits inside a <picture>, so clone that to keep the webp source
+    const wrapped = item.parentElement.tagName === 'PICTURE'
+    const source = wrapped ? item.parentElement : item
+    const host = source.parentElement
+    const copy = wrapped ? source.cloneNode(true) : source.cloneNode(false)
+    const shown = wrapped ? copy.querySelector('img') : copy
+
+    shown.style.position = 'fixed'
+    shown.style.height = '90vh'
+    shown.style.top = '5vh'
+    shown.style.width = 'auto'
+    shown.style.objectFit = 'contain'
+    shown.style.maxWidth = '90vw'
+    shown.style.left = '50%'
+    shown.style.transform = 'translate(-50%, 0)'
+    shown.style['-webkit-transform'] = 'translate(-50%, 0)'
+    shown.style.zIndex = '102'
 
     const focusFilter = document.createElement('div')
     focusFilter.style.position = 'fixed'
@@ -30,7 +36,7 @@ function expand(item){
         focusFilter.remove()
     }
 
-    copy.addEventListener('click', unexpand)
+    shown.addEventListener('click', unexpand)
     focusFilter.addEventListener('click', unexpand)
     window.addEventListener('keydown', evt => {
         if (evt.key === 'Escape') {
@@ -38,8 +44,8 @@ function expand(item){
         }
     })
 
-    item.parentElement.appendChild(focusFilter)
-    item.parentElement.appendChild(copy)
+    host.appendChild(focusFilter)
+    host.appendChild(copy)
 
 }
 

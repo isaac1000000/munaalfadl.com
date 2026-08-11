@@ -38,7 +38,7 @@
   "artMedium": {{ page.medium | jsonify }},
   "artform": "{% if page.medium == 'digital' %}Digital art{% else %}Painting{% endif %}",
   "dateCreated": "{{ page.year }}",
-  {% if page.series %}"isPartOf": {{ page.series | jsonify }},{% endif %}
+  {% if page.series %}"isPartOf": { "@type": "CreativeWorkSeries", "name": {{ page.series | jsonify }} },{% endif %}
   {% if dims.size == 2 %}
   "width": { "@type": "QuantitativeValue", "value": {{ dims[0] | strip }}, "unitText": "inches" },
   "height": { "@type": "QuantitativeValue", "value": {{ dims[1] | strip }}, "unitText": "inches" },
