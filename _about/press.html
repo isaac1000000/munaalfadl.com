@@ -1,0 +1,17 @@
+---
+layout: default
+title: "press"
+description: "Press coverage of Muna Al Fadl, including features in The Margins, The Glitch, Woman Around Town, the Docha Review and Fig and Olive Magazine."
+active: "/about"
+css: "press"
+---
+<div id="press-page">
+	<section class="press-section">
+		<h2 class="section-title">In the Press</h2>
+		{% for p in site.data.press %}
+		<div class="press-item">
+			{% if p.url %}<a class="press-title" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}<span class="press-title">{{ p.title }}</span>{% endif %}, <span class="press-outlet">{{ p.outlet }}</span>{% if p.author %}, <span class="press-author">{{ p.author }}</span>{% endif %}{% if p.date %}, <span class="press-date">{{ p.date }}</span>{% endif %}
+		</div>
+		{% endfor %}
+	</section>
+</div>

@@ -124,12 +124,17 @@ navigation:
   # temporarily hidden
   # - text: "curation"
   #   url: "/curation"
+  - text: "appearances"
+    url: "/404"
+    subpages:
+      - text: "exhibitions"
+        url: "/about/exhibitions"
+      - text: "press"
+        url: "/about/press"
   - text: "about"
     url: "/404"
     subpages:
       - text: "statement"
         url: "/about/statement"
-      - text: "exhibitions"
-        url: "/about/exhibitions"
       - text: "contact"
         url: "/about/contact"
